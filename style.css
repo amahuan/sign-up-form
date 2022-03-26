@@ -1,0 +1,318 @@
+:root {
+    --green-color: rgb(3,199,46);
+    --container-height: 80vh;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+body {
+    justify-content: center;
+    background-color: rgb(10, 10, 10);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+    align-content: center;
+    /* background-image: url('images/matrix-background-1.jpg');
+    background-size: cover; */
+}
+
+.container {
+    display: flex;
+    height: var(--container-height);
+    width: 80vw;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-radius: 24px;
+    border-width: 1px;
+    justify-content: center;
+    align-content: center;
+}
+
+.left {
+    width: 45%;
+    background-image: url('images/matrix-background-1-crop.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 25vh;
+    gap: 1vw;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 5vh;
+    line-height: 6vh;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logo img {
+    height: 15vh;
+    /* margin-left: 5vw;  */
+}
+
+.logo img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.right {
+    display: flex;
+    width: 55%;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-image: url('images/matrix-background-3.jpg');
+    background-size:cover;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    
+}
+
+/* .right-content {
+    margin-bottom: 10em;
+} */
+
+.message {
+    box-sizing: border-box;
+    background-color: black;
+    opacity: 0.8;
+    font-size: 1.5vh;
+    color: white;
+    width: 100%;
+    padding-left: 1vw;
+    padding-right: 2vw;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+}
+
+.message > p {
+    padding-bottom: 1.5vh;
+}
+.personal {
+    opacity: 0.8;
+}
+
+.profile {
+    height: 25em;
+    align-content: center;
+    justify-content: center;
+    /* padding: 0 1vw; */
+    width: 100%;
+}
+
+.data {
+    box-sizing: border-box;
+    background-color: black;
+    color: var(--green-color);
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    align-content: center;
+    max-width: 100rem;
+    padding: 0 1vw;
+    padding-bottom: 2vh;
+}
+
+.data input:focus {
+    background-color: rgb(63, 189, 91);
+  }
+
+.data input:not(:focus):invalid .error {
+    background-color: rgb(250, 136, 136);
+  }
+
+.ava {
+    box-sizing: border-box;
+    padding: 0 1vw;
+    background-color: black;
+    color: var(--green-color);
+    display: flex;
+    gap: 1rem;
+    align-content: center;
+    width: 100rem;
+    opacity: 0.8;
+}
+
+.personalInfo {
+    display: flex;
+    flex-flow: column wrap;
+    width: 30%;
+    font-size: 0.9rem;
+}
+
+.personalInfo > input {
+    background-color: black;
+    border-color: white;
+    border-width: 1px;
+    padding: 5px;
+    margin-top: 5px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 6px;
+}
+
+.avatarChoose {
+    display: flex;
+    opacity: 1;
+}
+
+#avatarSelection {
+    margin-bottom: 2vh;
+    display:inline-block;
+
+}
+.avatars img {
+    height: 100px;
+    width: 100px;
+    border-radius: 16px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.avatars img:hover {
+    transform: scale(1.2);
+}
+
+.avatars > input, .avatars-choose > input{
+    display: none;
+  }
+
+.avatars > input + img {
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+.avatars > input:checked + img, .avatars-choose > input:checked + img{
+    border: 2px solid var(--green-color);
+}
+
+fieldset {
+    width: 600px;
+    border: none;
+    /* border: red;
+    border-style: solid; */
+    margin-left: -12px;
+    padding: 0.6vw;
+}
+
+.avatars-choose > input + img {
+    cursor: pointer;
+    border-color: rgb(54, 53, 53);
+    border-style: dotted;
+    border-width: 3px;
+    height: 100px;
+    width: 100px;
+    border-radius: 16px;
+}
+
+.avatars-choose > input {
+    content: "upload your own";
+}
+
+input[type=file]::file-selector-button {
+    visibility: hidden;
+}
+
+#avatar {
+    color: transparent;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+input[type=file]::before {
+    content: "Upload Your Own";
+    color: var(--green-color);
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button[type=submit] {
+    /* background-color: black; */
+    background-image: linear-gradient(to right, var(--green-color) 0%, blue 60%, var(--green-color) 100%);
+    background-size: 200% auto;
+    color: white;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: var(--green-color);
+    border-width: 1px;;
+    padding: 5px;
+    outline: none;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    width: 15em;
+    transition: 1s;
+}
+
+button[type=submit]:hover {
+    /* background-color: linear-gradient(to right, var(--green-color) 0%, blue 51%, var(--green-color) 100%); */
+    background-position: right center;
+    /* border-color: blue;
+    color: white; */
+}
+
+.submission {
+    background-color: black;
+    opacity: 0.8;
+}
+
+.sign-in {
+    display: flex;
+    text-align: center;
+    color: white;
+    background-color: black;
+    opacity: 0.8;
+    padding: 0 1vw;
+}
+
+.sign-in > p {
+    font-size: smaller;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+a {
+    color: var(--green-color);
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background left">
+            <div class="logo">
+                <img src="images/rabbit-logo.png" alt="rabbit">
+                <h1>THE<br>MATRIX</h1>
+            </div>
+        </div>
+        <div class="formInput right">
+            <div class="right-content">
+                <div class="message">
+                    <p>Are you ready to escape from the grim reality of the real world?  Join the Matrix now!</p>
+                    <p>After this, there is no turning back...not like you'd want to anyway.</p>
+                    <P>After all, <em>ignorance is bliss</em>.</P>
+                </div>
+                <div class="profile">
+                    <div class="personal">
+                        <form class="data">
+                            <div class="personalInfo" id="first">
+                                <label for="alias">ALIAS</label> 
+                                <input type="text" id="alias" required>
+                                <div id='alias-error' class='error'></div>
+                            </div>   
+                            <div class="personalInfo" id="emailInput">
+                                <label for="email">E-MAIL</label> 
+                                <input type="email" id="email" required pattern="[a-zA-Z0-9]+@" title="Please enter a valid e-mail address">
+                                <div id='email-error' class='error'></div>
+                            </div> 
+                            <div class="personalInfo" id="phoneNum">
+                                <label for="phone">PHONE</label>
+                                <input type="tel" id="phone" required maxlength="12" pattern="\d{3}(-)?\d{3}(-)?\d{4}" title="Format: 312-555-0690">
+                                <div id='phone-error' class='error'></div>
+                            </div> 
+                            <div class="personalInfo" id="pw">
+                                <label for="password">PASSWORD</label>
+                                <input type="password" id="password" required minlength="8" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$' title="Minimum of alphanumeric characters: at least 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character.">
+                                <div id='password-error' class='error'></div>
+                            </div>      
+                            <div class="personalInfo" id="pwConfirm">
+                                <label for="passwordConfirmation">CONFIRM PASSWORD</label> 
+                                <input type="password" id="passwordConfirmation" required minlength="8" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title="Passwords must match">
+                                <div id='password-conf-error' class='error'></div>
+                            </div>  
+                        </form>   
+                    </div>
+                    <div class="avatarChoose">
+                        <form class="ava"> 
+                        <fieldset>
+                        <label id="avatarSelection">SELECT YOUR AVATAR: </label> <br>
+                        <label class="avatars">
+                            <input type="radio" name="avatar" id="neo">
+                            <img src="images/neo-ava.jpg" alt="neo">
+                        </label>
+                        <label class="avatars">
+                            <input type="radio" name="avatar" id="trinity">
+                            <img src="images/trinity-ava.jpg" alt="trinity">
+                        </label>
+                        <label class="avatars">
+                            <input type="radio" name="avatar" id="morpheus">
+                            <img src="images/morpheus-ava.jpg" alt="morpheus">
+                        </label>
+                        <label class="avatars">
+                            <input type="radio" name="avatar" id="agents">
+                            <img src="images/agents-ava.jpg" alt="agents">
+                        </label>
+                        <label class="avatars-choose">
+                            <input type="radio" name="avatar" id="your-own" value="upload">
+                            <img id="custom" src="images/blank.jpg" alt="your-own">
+                        </label>
+                        <label for="avatar">
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                        </label>
+                        </fieldset>
+                        </form>
+                    </div>
+                    <div class="submission">
+                        <button type="submit">CREATE PROFILE</button>
+                    </div>
+                    <div class="sign-in">
+                        <p>Already have an account? <a href="#">Log in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
