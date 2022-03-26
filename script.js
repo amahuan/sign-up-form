@@ -1,5 +1,12 @@
-let avatarSelection=document.getElementById('avatarSelection');
+const avatarSelection=document.getElementById('avatarSelection');
 const buttons=document.querySelectorAll('input[type="radio"]');
+const customAvatarSelection=document.getElementById("custom");
+const fileUpload=document.querySelector('input[type="file"]');
+const alias=document.getElementById('alias');
+const emalil=document.getElementById('email');
+const phone=document.getElementById('phone');
+const password=document.getElementById('password');
+const passwordConf=document.getElementById('passwordConfirmation');
 
 buttons.forEach((button) => {
 button.addEventListener('click',()=>{
@@ -20,14 +27,6 @@ button.addEventListener('click',()=>{
     }
 });
 })
-
-
-let customAvatarSelection=document.getElementById("custom");
-let fileUpload=document.querySelector('input[type="file"]');
-// fileUpload.addEventListener('click',()=>{
-//     customAvatarSelection.style.borderColor="rgb(3,199,46)";
-//  });
-
  
  fileUpload.addEventListener("change", function (event) {
  if(document.getElementById("avatar").value != "") {
