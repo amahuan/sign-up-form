@@ -15,7 +15,7 @@
                 <h1>THE<br>MATRIX</h1>
             </div>
         </div>
-        <div class="formInput right">
+        <div class="right">
                 <div class="message">
                     <p>Are you ready to escape from the grim reality of the real world and the neverending battle against the Machines?  Join the Matrix now!</p>
                     <p>After this, there is no turning back...not like you'd want to anyway.</p>
@@ -23,67 +23,65 @@
                 </div>
                 <div class="profile">
                     <div class="personal">
-                        <form class="data">
+                        <form id="user-form" class="data">
                             <div class="personalInfo" id="first">
                                 <label for="alias">ALIAS</label> 
                                 <input type="text" id="alias" required>
-                                <div id='alias-error' class='error'></div>
                             </div>   
                             <div class="personalInfo" id="emailInput">
                                 <label for="email">E-MAIL</label> 
-                                <input type="email" id="email" required pattern="[a-zA-Z0-9]+@" title="Please enter a valid e-mail address">
-                                <div id='email-error' class='error'></div>
+                                <input type="email" id="email" required title="Please enter a valid e-mail address" autocomplete="off">
+
                             </div> 
                             <div class="personalInfo" id="phoneNum">
                                 <label for="phone">PHONE</label>
-                                <input type="tel" id="phone" required maxlength="12" pattern="\d{3}(-)?\d{3}(-)?\d{4}" title="Format: 312-555-0690">
-                                <div id='phone-error' class='error'></div>
+                                <input type="tel" id="phone" required maxlength="12" pattern="\d{3}(-)?\d{3}(-)?\d{4}" title="Format: 312-555-0690" autocomplete="off">
                             </div> 
                             <div class="personalInfo" id="pw">
                                 <label for="password">PASSWORD</label>
-                                <input type="password" id="password" required minlength="8" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$' title="Minimum of alphanumeric characters: at least 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character.">
-                                <div id='password-error' class='error'></div>
+                                <input type="password" id="password" required minlength="8" autocomplete="off" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$' title="Minimum of alphanumeric characters: at least 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character.">
+                                <div id='password-error' class='password-error'></div>
                             </div>      
                             <div class="personalInfo" id="pwConfirm">
                                 <label for="passwordConfirmation">CONFIRM PASSWORD</label> 
-                                <input type="password" id="passwordConfirmation" required minlength="8" pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title="Passwords must match">
-                                <div id='password-conf-error' class='error'></div>
-                            </div>  
-                        </form>   
+                                <input type="password" id="passwordConfirmation" required minlength="8" autocomplete="off" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$' title="Passwords must match">
+                                <div id='password-conf-error' class='password-error'></div>
+                            </div>    
                     </div>
+                </div>
+                <div class="avatarChoose">
+                    <p id="avatarTitle">SELECT YOUR AVATAR:</p>
+                    <div class="ava">
+                    <label class="avatars">
+                        <input type="radio" name="avatar" id="neo">
+                        <img src="images/neo-ava.jpg" alt="neo">
+                    </label>
+                    <label class="avatars">
+                        <input type="radio" name="avatar" id="trinity">
+                        <img src="images/trinity-ava.jpg" alt="trinity">
+                    </label>
+                    <label class="avatars">
+                        <input type="radio" name="avatar" id="morpheus">
+                        <img src="images/morpheus-ava.jpg" alt="morpheus">
+                    </label>
+                    <label class="avatars">
+                        <input type="radio" name="avatar" id="agents">
+                        <img src="images/agents-ava.jpg" alt="agents">
+                    </label>
+                    <label class="avatars-choose">
+                        <input type="radio" name="avatar" id="your-own" value="upload">
+                        <img id="custom" src="images/blank.jpg" alt="your-own">
+                    </label>
                     </div>
-                    <div class="avatarChoose">
-                        <form class="ava"> 
-                        <fieldset>
-                        <label id="avatarSelection">SELECT YOUR AVATAR: </label> <br>
-                        <label class="avatars">
-                            <input type="radio" name="avatar" id="neo">
-                            <img src="images/neo-ava.jpg" alt="neo">
-                        </label>
-                        <label class="avatars">
-                            <input type="radio" name="avatar" id="trinity">
-                            <img src="images/trinity-ava.jpg" alt="trinity">
-                        </label>
-                        <label class="avatars">
-                            <input type="radio" name="avatar" id="morpheus">
-                            <img src="images/morpheus-ava.jpg" alt="morpheus">
-                        </label>
-                        <label class="avatars">
-                            <input type="radio" name="avatar" id="agents">
-                            <img src="images/agents-ava.jpg" alt="agents">
-                        </label>
-                        <label class="avatars-choose">
-                            <input type="radio" name="avatar" id="your-own" value="upload">
-                            <img id="custom" src="images/blank.jpg" alt="your-own">
-                        </label>
-                        <label for="avatar">
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                        </label>
-                        </fieldset>
-                        </form>
+                    <div class="upload">
+                    <label for="avatar">
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                    </label>
                     </div>
+                </div>
+                </form> 
                     <div class="submission">
-                        <button type="submit">CREATE PROFILE</button>
+                        <button type="submit" form="user-form">CREATE PROFILE</button>
                     </div>
                     <div class="sign-in">
                         <p>Already have an account? <a href="#">Log in</a></p>

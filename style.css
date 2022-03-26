@@ -176,9 +176,14 @@ h1 {
     background-color: rgb(63, 189, 91);
   }
 
-.personalInfo input:not(:focus):invalid .error {
+.personalInfo .error {
     background-color: rgb(250, 136, 136);
   }
+
+.personalInfo .password-error {
+    color: red;
+    font-weight: 400;
+}
 
 .ava {
     box-sizing: border-box;
@@ -194,6 +199,15 @@ h1 {
 
 .avatarChoose {
     display: flex;
+    flex-direction: column;
+}
+
+#avatarTitle {
+    color: var(--green-color);
+    background-color: rgba(0,0,0,0.7);
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+    font-size: 0.8rem;
 }
 
 #avatarSelection {
@@ -224,15 +238,6 @@ h1 {
     border: 2px solid var(--green-color);
 }
 
-fieldset {
-    width: 600px;
-    border: none;
-    /* border: red;
-    border-style: solid; */
-    margin-left: -12px;
-    padding: 0.6vw;
-}
-
 .avatars-choose > input + img {
     cursor: pointer;
     border-color: rgb(54, 53, 53);
@@ -260,6 +265,11 @@ input[type=file]::-webkit-file-upload-button {
     visibility: hidden;
 }
 
+.upload {
+    background-color: rgba(0,0,0,0.7);
+    padding-left: 1vw;
+}
+
 input[type=file]::before {
     content: "Upload Your Own";
     color: var(--green-color);
@@ -284,6 +294,7 @@ button[type=submit] {
     font-size: 0.9em;
     width: 15em;
     transition: 1s;
+    cursor: pointer;
 }
 
 button[type=submit]:hover {
