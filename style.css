@@ -1,6 +1,7 @@
 :root {
     --green-color: rgb(3,199,46);
     --container-height: 80vh;
+    --container-width: 80vw;
 }
 
 *{
@@ -8,20 +9,6 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
 
 html {
     height: 100%;
@@ -38,21 +25,42 @@ body {
     align-content: center;
 }
 
+/* animation for logo */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+/* animation for modal */
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+
 .container {
+    box-sizing: border-box;
     display: flex;
     height: var(--container-height);
-    width: 80vw;
+    width: var(--container-width);
     border-style: solid;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    border-radius: 24px;
-    border-width: 1px;
     justify-content: center;
     align-content: center;
 }
 
+/* left-side panel: picture, logo and text */
 .left {
     width: 45%;
     background-image: url('images/matrix-background-1-crop.jpg');
@@ -76,7 +84,7 @@ body {
     align-items: center;
 }
 
-h1 {
+.matrix {
     color: white;
     font-size: 4.5vh;
     line-height: 6vh;
@@ -94,6 +102,7 @@ h1 {
     animation-iteration-count: infinite;
 }
 
+/* right-side panel: message, form, avatar selection, submit and existing user link */
 .right {
     display: flex;
     width: 55%;
@@ -105,10 +114,7 @@ h1 {
     border-bottom-right-radius: 16px;    
 }
 
-/* .right-content {
-    justify-content: center;
-} */
-
+/* displayed message */
 .message {
     box-sizing: border-box;
     background-color: rgba(0,0,0,0.7);
@@ -124,16 +130,8 @@ h1 {
 .message > p {
     padding-bottom: 1.5vh;
 }
-.personal {
-    width: 100%;
-}
 
-.profile {
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-}
-
+/* personal info input fields */
 .data {
     box-sizing: border-box;
     background-color: rgba(0,0,0,0.7);
@@ -146,11 +144,6 @@ h1 {
     padding: 0 1vw;
     padding-bottom: 2vh;
 }
-
-/* .data input {
-    height: 2.2vh;
-    width: 12vw;
-  } */
 
 .personalInfo {
     display: flex;
@@ -185,10 +178,9 @@ h1 {
     font-weight: 400;
 }
 
+/* avatar selection */
 .ava {
     box-sizing: border-box;
-    padding: 0 1vw;
-    background-color: rgba(0,0,0,0.7);
     color: var(--green-color);
     display: flex;
     gap: 1rem;
@@ -204,8 +196,6 @@ h1 {
 
 #avatarTitle {
     color: var(--green-color);
-    background-color: rgba(0,0,0,0.7);
-    padding-left: 1vw;
     padding-bottom: 1vh;
     font-size: 0.8rem;
 }
@@ -234,6 +224,7 @@ h1 {
     cursor: pointer;
     border: 2px solid transparent;
   }
+
 .avatars > input:checked + img, .avatars-choose > input:checked + img{
     border: 2px solid var(--green-color);
 }
@@ -265,11 +256,6 @@ input[type=file]::-webkit-file-upload-button {
     visibility: hidden;
 }
 
-.upload {
-    background-color: rgba(0,0,0,0.7);
-    padding-left: 1vw;
-}
-
 input[type=file]::before {
     content: "Upload Your Own";
     color: var(--green-color);
@@ -278,8 +264,8 @@ input[type=file]::before {
     font-size: 0.7rem;
 }
 
+/* submit button */
 button[type=submit] {
-    /* background-color: black; */
     background-image: linear-gradient(to right, var(--green-color) 0%, blue 60%, var(--green-color) 100%);
     background-size: 200% auto;
     color: white;
@@ -305,6 +291,7 @@ button[type=submit]:hover {
     background-color: rgba(0,0,0,0.7);
 }
 
+/* sign-in for existing user */
 .sign-in {
     display: flex;
     text-align: center;
@@ -322,3 +309,70 @@ button[type=submit]:hover {
 a {
     color: var(--green-color);
 }
+
+/* modal styling */
+/* modal image */ 
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+ 
+#myImg:hover {opacity: 0.7;}
+
+/* modal background */
+.modal {
+    box-sizing: border-box;
+    padding: 20vh;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 10vh;
+    width: 100%;
+    height: var(--container-height); 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+  /* modal content */
+  .modal-content {
+    margin: auto;
+    display: block;
+  }
+  
+  /* modal caption */
+  #caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: var(--green-color);
+    padding: 10px 0;
+    height: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2vh;
+  }
+  
+  /* modal animation */
+  .modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  /* close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--green-color);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+  }

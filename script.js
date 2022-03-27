@@ -10,6 +10,9 @@ const passwordConf=document.getElementById('passwordConfirmation');
 const passwordError=document.getElementById('password-error');
 const passwordConfirmError=document.getElementById('password-conf-error');
 const form=document.querySelector('form');
+const submitButton=document.querySelector('button');
+const content=document.getElementsByClassName('container')[0];
+const kick=document.getElementById('kick');
 
 //changes the name of the avatar based on selection/radio button click
 buttons.forEach((button) => {
@@ -118,3 +121,44 @@ passwordConf.addEventListener('input',function(event) {
         passwordConfirmError.textContent = '';
     }
 });
+
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+    modalFunc();
+    setTimeout(submitForm,500);
+});
+
+function modalFunc(){
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = "You are ready to enter the Matrix!";
+    }
+
+function submitForm() {
+    form.submit()
+    }
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+span.addEventListener('click',function(event){
+    modal.style.display = "none";
+});
+
+
+
+
+
+// content.addEventListener('submit', function(event){
+//     if(alias.checkValidity===false||phone.validity.patternMismatch||password.validity.patternMismatch){
+//         event.preventDefault();
+//     }
+//     else{
+//         kick.style="visibility=visible";
+//     }
+// });

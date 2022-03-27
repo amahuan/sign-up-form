@@ -12,7 +12,7 @@
         <div class="background left">
             <div class="logo">
                 <img src="images/rabbit-logo.png" alt="rabbit">
-                <h1>THE<br>MATRIX</h1>
+                <h1 class="matrix">THE<br>MATRIX</h1>
             </div>
         </div>
         <div class="right">
@@ -22,11 +22,10 @@
                     <P>After all, <em>ignorance is bliss</em>.</P>
                 </div>
                 <div class="profile">
-                    <div class="personal">
                         <form id="user-form" class="data">
                             <div class="personalInfo" id="first">
                                 <label for="alias">ALIAS</label> 
-                                <input type="text" id="alias" required>
+                                <input type="text" id="alias" required autocomplete="off">
                             </div>   
                             <div class="personalInfo" id="emailInput">
                                 <label for="email">E-MAIL</label> 
@@ -47,45 +46,52 @@
                                 <input type="password" id="passwordConfirmation" required minlength="8" autocomplete="off" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$' title="Passwords must match">
                                 <div id='password-conf-error' class='password-error'></div>
                             </div>    
-                    </div>
+                            <div class="avatarChoose">
+                                <p id="avatarTitle">SELECT YOUR AVATAR:</p>
+                                <div class="ava">
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" id="neo">
+                                    <img src="images/neo-ava.jpg" alt="neo">
+                                </label>
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" id="trinity">
+                                    <img src="images/trinity-ava.jpg" alt="trinity">
+                                </label>
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" id="morpheus">
+                                    <img src="images/morpheus-ava.jpg" alt="morpheus">
+                                </label>
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" id="agents">
+                                    <img src="images/agents-ava.jpg" alt="agents">
+                                </label>
+                                <label class="avatars-choose">
+                                    <input type="radio" name="avatar" id="your-own" value="upload">
+                                    <img id="custom" src="images/blank.jpg" alt="your-own">
+                                </label>
+                                </div>
+                                <div class="upload">
+                                <label for="avatar">
+                                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                                </label>
+                                </div>
+                            </div>
+                        </form> 
+                </div>        
+                <div class="submission">
+                    <button type="submit" form="user-form">CREATE PROFILE</button>
                 </div>
-                <div class="avatarChoose">
-                    <p id="avatarTitle">SELECT YOUR AVATAR:</p>
-                    <div class="ava">
-                    <label class="avatars">
-                        <input type="radio" name="avatar" id="neo">
-                        <img src="images/neo-ava.jpg" alt="neo">
-                    </label>
-                    <label class="avatars">
-                        <input type="radio" name="avatar" id="trinity">
-                        <img src="images/trinity-ava.jpg" alt="trinity">
-                    </label>
-                    <label class="avatars">
-                        <input type="radio" name="avatar" id="morpheus">
-                        <img src="images/morpheus-ava.jpg" alt="morpheus">
-                    </label>
-                    <label class="avatars">
-                        <input type="radio" name="avatar" id="agents">
-                        <img src="images/agents-ava.jpg" alt="agents">
-                    </label>
-                    <label class="avatars-choose">
-                        <input type="radio" name="avatar" id="your-own" value="upload">
-                        <img id="custom" src="images/blank.jpg" alt="your-own">
-                    </label>
-                    </div>
-                    <div class="upload">
-                    <label for="avatar">
-                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                    </label>
-                    </div>
+                <div class="sign-in">
+                    <p>Already have an account? <a href="#">Log in</a></p>
                 </div>
-                </form> 
-                    <div class="submission">
-                        <button type="submit" form="user-form">CREATE PROFILE</button>
-                    </div>
-                    <div class="sign-in">
-                        <p>Already have an account? <a href="#">Log in</a></p>
-                    </div>
+        </div>
+    </div>
+    <div class="modal-submit">      
+        <img id="myImg" src="images/trinity-kick.jpg" alt="trinity kick" style="width:100%;max-width:300px">
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <h1 id="caption"></h1>
         </div>
     </div>
     <script src="script.js"></script>
