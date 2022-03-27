@@ -312,6 +312,15 @@ a {
 
 /* modal styling */
 /* modal image */ 
+
+.hide {
+    display:none;
+}
+
+.show {
+    display:block;
+}
+
 #myImg {
     border-radius: 5px;
     cursor: pointer;

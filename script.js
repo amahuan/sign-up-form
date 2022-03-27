@@ -3,7 +3,7 @@ const buttons=document.querySelectorAll('input[type="radio"]');
 const customAvatarSelection=document.getElementById("custom");
 const fileUpload=document.querySelector('input[type="file"]');
 const alias=document.getElementById('alias');
-const emalil=document.getElementById('email');
+const email=document.getElementById('email');
 const phone=document.getElementById('phone');
 const password=document.getElementById('password');
 const passwordConf=document.getElementById('passwordConfirmation');
@@ -122,43 +122,35 @@ passwordConf.addEventListener('input',function(event) {
     }
 });
 
+//modal creation and form submission related code
 var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById("myImg");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+
+//when submit is clicked, the form is not submitted right away to allow the modal to be displayed. 
 submitButton.addEventListener('click', function(event){
-    event.preventDefault();
-    modalFunc();
-    setTimeout(submitForm,500);
+    if((email.checkValidity()===true)&&(!phone.validity.patternMismatch)&&(!password.validity.patternMismatch)&&(password.value===passwordConf.value)){
+        event.preventDefault();
+        modalFunc();
+        setTimeout(submitForm,3000);
+    }
 });
 
+//inserts selected image into the modal and displays specified text
 function modalFunc(){
         modal.style.display = "block";
         modalImg.src = img.src;
         captionText.innerHTML = "You are ready to enter the Matrix!";
     }
 
+//function that causes the form to be submitted
 function submitForm() {
     form.submit()
     }
 
-// Get the <span> element that closes the modal
+//creates the <span> element to close the modal
 var span = document.getElementsByClassName("close")[0];
 span.addEventListener('click',function(event){
     modal.style.display = "none";
 });
-
-
-
-
-
-// content.addEventListener('submit', function(event){
-//     if(alias.checkValidity===false||phone.validity.patternMismatch||password.validity.patternMismatch){
-//         event.preventDefault();
-//     }
-//     else{
-//         kick.style="visibility=visible";
-//     }
-// });
